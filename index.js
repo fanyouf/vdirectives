@@ -1,9 +1,11 @@
-import jumpNumber from "./direcives/jumpNumber"
+import directives from "./directives/index"
 
 export default {
     install: function(Vue, options) {
-        Vue.directive("jumpNumber", jumpNumber)
+        Object.keys(directives).forEach(key => {
+            Vue.directive(key, directives[key]);
+        });
     }
-  }
+}
 
-export {jumpNumber}
+export {directives}
